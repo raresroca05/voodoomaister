@@ -1,17 +1,68 @@
+import * as ReactDOMClient from 'react-dom/client';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { Web3ReactProvider } from '@web3-react/core';
+import { Web3Provider } from '@ethersproject/providers';
+import {
+  transitions,
+  positions,
+  Provider as AlertProvider,
+} from '@blaumaus/react-alert';
+import AlertTemplate from 'react-alert-template-oldschool-dark';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+import './styles/index.css';
+
+import Home from './pages/Home';
+import MintRoom from './pages/MintRoom';
+import registerServiceWorker from './utils/reportWebVitals';
+
+window.onload = () => {
+  localStorage.clear();
+};
+
+const getLibrary = (provider) => {
+  const library = new Web3Provider(provider);
+  library.pollingInterval = 12000;
+
+  return library;
+};
+
+const alertOptions = {
+  position: positions.MIDDLE,
+  timeout: 5000,
+  transition: transitions.SCALE,
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/mint-room" element={<MintRoom />} />
+      </Routes>
+    </Router>
+  );
+};
+
+const container = document.getElementById('root');
+const root = ReactDOMClient.createRoot(container);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Web3ReactProvider getLibrary={getLibrary}>
+      <AlertProvider template={AlertTemplate} {...alertOptions}>
+        <App />
+      </AlertProvider>
+    </Web3ReactProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+registerServiceWorker();

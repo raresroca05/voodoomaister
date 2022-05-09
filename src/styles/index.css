@@ -1,0 +1,30 @@
+body {
+  background-image: url('../assets/images/4k.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.account-text-truncate {
+  max-width: 80px !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.coin-img {
+  width: 450px;
+  height: 450px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .coin-img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .col-md-4 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
