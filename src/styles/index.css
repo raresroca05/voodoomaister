@@ -17,6 +17,10 @@ body {
   height: 450px;
 }
 
+.h-60 {
+  height: 60% !important;
+}
+
 @media only screen and (max-width: 1000px) {
   .coin-img {
     width: 250px;

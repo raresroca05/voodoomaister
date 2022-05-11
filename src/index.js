@@ -13,7 +13,7 @@ import {
   positions,
   Provider as AlertProvider,
 } from '@blaumaus/react-alert';
-import AlertTemplate from 'react-alert-template-oldschool-dark';
+import AlertTemplate from 'react-alert-template-basic';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -37,8 +37,8 @@ const getLibrary = (provider) => {
 
 const alertOptions = {
   position: positions.MIDDLE,
-  timeout: 5000,
-  transition: transitions.SCALE,
+  timeout: 10000,
+  transition: transitions.FADE,
 };
 
 const App = () => {

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import LoadingOverlay from 'react-loading-overlay';
+
 import { useWeb3React } from '@web3-react/core';
 import { ethers } from 'ethers';
 import { serializeError } from 'eth-rpc-errors';
@@ -112,7 +114,7 @@ const MintRoom = () => {
       await activate(metaMask);
     } else {
       alert.removeAll();
-      alert.error('Please install MetaMask (https://metamask.io//)');
+      alert.error('Please install MetaMask (https://metamask.io/)');
     }
   };
 
@@ -193,7 +195,12 @@ const MintRoom = () => {
   useInactiveListener(!triedEager || !!activatingConnector);
 
   return (
-    <>
+    <LoadingOverlay
+      className="d-flex flex-column h-100"
+      active={isMinting}
+      spinner
+      text="Minting! Please wait..."
+    >
       <header className="mb-auto">
         <nav className="navbar navbar-dark fixed-top bg-transparent">
           <div className="container">
@@ -328,14 +335,14 @@ const MintRoom = () => {
                 {nftType === 'normal' && (
                   <img
                     src={normalPass}
-                    class="rounded mx-auto d-block coin-img"
+                    className="rounded mx-auto d-block coin-img"
                     alt="Normal"
                   />
                 )}
                 {nftType === 'broken' && (
                   <img
                     src={brokenPass}
-                    class="rounded mx-auto d-block coin-img"
+                    className="rounded mx-auto d-block coin-img"
                     alt="Broken"
                   />
                 )}
@@ -346,7 +353,7 @@ const MintRoom = () => {
       </main>
 
       <Footer />
-    </>
+    </LoadingOverlay>
   );
 };
 

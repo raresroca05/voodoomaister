@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,20 +11,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
-  const EmailButton = ({ mailto, label }) => {
-    return (
-      <Link
-        to="#"
-        onClick={(e) => {
-          window.location.href = mailto;
-          e.preventDefault();
-        }}
-      >
-        {label}
-      </Link>
-    );
-  };
-
   return (
     <>
       <footer className="footer mt-auto py-md-3 text-white bg-transparent">
@@ -123,7 +108,7 @@ const Footer = () => {
       </footer>
 
       <div
-        class="modal fade"
+        class="modal fade modal-tour bg-transparent py-5"
         id="staticTeam"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
@@ -132,128 +117,86 @@ const Footer = () => {
         aria-hidden="true"
       >
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticTeamLabel">
-                Team Members
-              </h5>
+          <div class="modal-content rounded-6 shadow">
+            <div class="modal-body p-5">
+              <h2 class="fw-bold mb-0">Team Members</h2>
+              <ul class="d-grid gap-4 my-5 list-unstyled">
+                <li class="d-flex gap-4">
+                  <a
+                    href="https://instagram.com/nusuntian?igshid=YmMyMTA2M2Y="
+                    target={'_blank'}
+                    className="text-decoration-none"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                  <div>
+                    <h5 class="mb-0">IAN</h5>
+                    founder - art vision
+                  </div>
+                </li>
+                <li class="d-flex gap-4">
+                  <a
+                    href="https://instagram.com/razvan.eth?igshid=YmMyMTA2M2Y="
+                    target={'_blank'}
+                    className="text-decoration-none"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                  <div>
+                    <h5 class="mb-0">SBURATORUL</h5>
+                    co-founder - project manager - real estate project
+                    manager background and web3 background
+                  </div>
+                </li>
+                <li class="d-flex gap-4">
+                  <a
+                    href="https://instagram.com/rankervan?igshid=YmMyMTA2M2Y="
+                    target={'_blank'}
+                    className="text-decoration-none"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                  <div>
+                    <h5 class="mb-0">RANKERVAN</h5>
+                    co-founder - financial manager with real business
+                    background
+                  </div>
+                </li>
+                <li class="d-flex gap-4">
+                  <a
+                    href="https://instagram.com/giuscaandrei?igshid=YmMyMTA2M2Y="
+                    target={'_blank'}
+                    className="text-decoration-none"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                  <div>
+                    <h5 class="mb-0">TheCarGuy</h5>
+                    NFT expert with web3 background and a real Diamond
+                    Holder of Clone-X
+                  </div>
+                </li>
+                <li class="d-flex gap-4">
+                  <a
+                    href="https://instagram.com/lexgbr?igshid=YmMyMTA2M2Y="
+                    target={'_blank'}
+                    className="text-decoration-none"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                  <div>
+                    <h5 class="mb-0">ALEXANDRU</h5>
+                    Discord Manager - marketing&management background
+                    in Holland
+                  </div>
+                </li>
+              </ul>
               <button
                 type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div className="container">
-                <div className="row align-items-center justify-content-center mb-3">
-                  <div className="col-6">
-                    <h6 className="mb-0">
-                      <b>IAN</b> <br />
-                      founder - art vision
-                    </h6>
-                  </div>
-                  <div className="col-6 text-center">
-                    <p className="mb-0">
-                      <a
-                        href="https://instagram.com/nusuntian?igshid=YmMyMTA2M2Y="
-                        target={'_blank'}
-                        className="text-decoration-none"
-                      >
-                        Instagram
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                <div className="row align-items-center justify-content-center mb-3">
-                  <div className="col-6">
-                    <h6 className="mb-0">
-                      <b>SBURATORUL</b> <br />
-                      co-founder - project manager - real estate
-                      project manager background and web3 background
-                    </h6>
-                  </div>
-                  <div className="col-6 text-center">
-                    <p className="mb-0">
-                      <a
-                        href="https://instagram.com/razvan.eth?igshid=YmMyMTA2M2Y="
-                        target={'_blank'}
-                        className="text-decoration-none"
-                      >
-                        Instagram
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                <div className="row align-items-center justify-content-center mb-3">
-                  <div className="col-6">
-                    <h6 className="mb-0">
-                      <b>RANKERVAN</b> <br />
-                      co-founder - financial manager with real
-                      business background
-                    </h6>
-                  </div>
-                  <div className="col-6 text-center">
-                    <p className="mb-0">
-                      <a
-                        href="https://instagram.com/rankervan?igshid=YmMyMTA2M2Y="
-                        target={'_blank'}
-                        className="text-decoration-none"
-                      >
-                        Instagram
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                <div className="row align-items-center justify-content-center mb-3">
-                  <div className="col-6">
-                    <h6 className="mb-0">
-                      <b>TheCarGuy</b> <br />
-                      NFT expert with web3 background and a real
-                      Diamond Holder of Clone-X
-                    </h6>
-                  </div>
-                  <div className="col-6 text-center">
-                    <p className="mb-0">
-                      <a
-                        href="https://instagram.com/giuscaandrei?igshid=YmMyMTA2M2Y="
-                        target={'_blank'}
-                        className="text-decoration-none"
-                      >
-                        Instagram
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                <div className="row align-items-center justify-content-center mb-3">
-                  <div className="col-6">
-                    <h6 className="mb-0">
-                      <b>ALEXANDRU</b> <br />
-                      Discord Manager - marketing&management
-                      background in Holland
-                    </h6>
-                  </div>
-                  <div className="col-6 text-center">
-                    <p className="mb-0">
-                      <a
-                        href="https://instagram.com/lexgbr?igshid=YmMyMTA2M2Y="
-                        target={'_blank'}
-                        className="text-decoration-none"
-                      >
-                        Instagram
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
+                class="btn btn-lg btn-primary mt-5 w-100"
                 data-bs-dismiss="modal"
               >
-                Close
+                Thanks!
               </button>
             </div>
           </div>
