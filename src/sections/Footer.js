@@ -190,6 +190,32 @@ const Footer = () => {
                     in Holland
                   </div>
                 </li>
+                <li class="d-flex gap-4">
+                  <a
+                    href="https://www.instagram.com/danmitrea00"
+                    target={'_blank'}
+                    className="text-decoration-none"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                  <div>
+                    <h5 class="mb-0">Dan:Mitrea</h5>
+                    BlockChain Master
+                  </div>
+                </li>
+                <li class="d-flex gap-4">
+                  <a
+                    href="https://www.instagram.com/raresroca05/"
+                    target={'_blank'}
+                    className="text-decoration-none"
+                  >
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                  <div>
+                    <h5 class="mb-0">Panda05</h5>
+                    Software Engineer - WEB3 Developer
+                  </div>
+                </li>
               </ul>
               <button
                 type="button"

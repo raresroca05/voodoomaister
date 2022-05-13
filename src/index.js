@@ -58,7 +58,7 @@ const root = ReactDOMClient.createRoot(container);
 root.render(
   <React.StrictMode>
     <Web3ReactProvider getLibrary={getLibrary}>
-      <AlertProvider template={AlertTemplate} {...alertOptions}>
+    <AlertProvider template={AlertTemplate} {...alertOptions}>
         <App />
       </AlertProvider>
     </Web3ReactProvider>
