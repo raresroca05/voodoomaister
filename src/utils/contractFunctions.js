@@ -7,7 +7,7 @@ export const contractAddressNormal =
 export const contractAbiNormal = contractJsonNormal.abi;
 
 export const contractAddressBroken =
-  '0x3d3D768c65FA56BD20c266d8C8D20aAA249b132F';
+  '0xD12df4e7E4264da0231b2Dd5DD9a00c4eA23FbC4';
 export const contractAbiBroken = contractJsonBroken.abi;
 
 export const getContract = (library, type) => {

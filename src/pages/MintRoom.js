@@ -49,7 +49,7 @@ const MintRoom = () => {
     canGetTotalSupply =
       ethersProvider &&
       ethersProvider.provider.isMetaMask &&
-      ethersProvider.provider.chainId === '0x4' &&
+      ethersProvider.provider.chainId === '0x1' &&
       account;
 
     if (canGetTotalSupply) {
@@ -133,7 +133,7 @@ const MintRoom = () => {
       return;
     }
 
-    if (chainId !== 4) {
+    if (chainId !== 1) {
       alert.removeAll();
       alert.error('Please use only Ethereum MainNet.');
       return;
