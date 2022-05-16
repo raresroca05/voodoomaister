@@ -256,7 +256,7 @@ const MintRoom = () => {
         </nav>
       </header>
 
-      <main className="h-75 overflow-scroll">
+      <main className="h-sm-75 overflow-scroll">
         <div className="container">
           <div className="row align-items-center justify-content-center bg-transparent rounded">
             <div className="col-md-5">
@@ -270,7 +270,9 @@ const MintRoom = () => {
                     <button
                       type="button"
                       className={`btn btn-${
-                        nftType === 'normal' ? 'dark' : 'secondary'
+                        nftType === 'normal'
+                          ? 'light'
+                          : 'outline-light'
                       }`}
                       onClick={handleNormalType}
                     >
@@ -279,7 +281,9 @@ const MintRoom = () => {
                     <button
                       type="button"
                       className={`btn btn-${
-                        nftType === 'broken' ? 'dark' : 'secondary'
+                        nftType === 'broken'
+                          ? 'light'
+                          : 'outline-light'
                       }`}
                       onClick={handleBrokenType}
                     >
@@ -325,9 +329,10 @@ const MintRoom = () => {
               <div className="row p-3">
                 <div className="col-md-12 d-grid">
                   <button
-                    className="btn btn-dark"
+                    className="btn btn-light"
                     type="button"
                     onClick={mintNftHandler}
+                    disabled={!canGetTotalSupply}
                   >
                     MINT
                   </button>
