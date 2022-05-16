@@ -11,6 +11,15 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+main::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .account-text-truncate {
   max-width: 80px !important;
   white-space: nowrap;
