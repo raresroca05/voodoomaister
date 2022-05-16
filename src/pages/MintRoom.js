@@ -256,7 +256,7 @@ const MintRoom = () => {
         </nav>
       </header>
 
-      <main className="h-60 overflow-scroll">
+      <main className="h-75 overflow-scroll">
         <div className="container">
           <div className="row align-items-center justify-content-center bg-transparent rounded">
             <div className="col-md-5">

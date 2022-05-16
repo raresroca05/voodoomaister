@@ -36,7 +36,7 @@ const Home = () => {
         </nav>
       </header>
 
-      <main className="h-60 overflow-scroll">
+      <main className="h-75 overflow-scroll">
         <div className="container">
           <h2 className="pb-2 border-bottom text-white text-center">
             Voodoo Vault este prima comunitate guvernata de un artist

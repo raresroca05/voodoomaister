@@ -21,7 +21,7 @@ main {
 }
 
 .account-text-truncate {
-  max-width: 80px !important;
+  max-width: 60px !important;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -30,10 +30,6 @@ main {
 .coin-img {
   width: 450px;
   height: 450px;
-}
-
-.h-60 {
-  height: 60% !important;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -45,5 +41,11 @@ main {
   .col-md-4 {
     margin-bottom: 1rem;
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .mb-small {
+    margin-bottom: 0 !important;
   }
 }
