@@ -90,7 +90,11 @@ const MintRoom = () => {
   };
 
   const incrementnftsToMint = () => {
-    if (nftsToMint === 10) {
+    if (nftType === 'normal' && nftsToMint === 3) {
+      alert.removeAll();
+      alert.error('You cannot mint more than 3 NFTs.');
+      return;
+    } else if (nftType === 'broken' && nftsToMint === 10) {
       alert.removeAll();
       alert.error('You cannot mint more than 10 NFTs.');
       return;

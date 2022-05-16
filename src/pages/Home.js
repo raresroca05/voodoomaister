@@ -39,190 +39,184 @@ const Home = () => {
       <main className="h-60 overflow-scroll">
         <div className="container">
           <h2 className="pb-2 border-bottom text-white text-center">
-            Road Map
+            Voodoo Vault este prima comunitate guvernata de un artist
+            roman la nivel international, fiind un proiect unic axat
+            pe arta in blockchain. Fiecare capitol reprezinta o noua
+            colectie.
           </h2>
           <div className="row g-4 py-5 row-cols-1 row-cols-lg-2">
             <div className="col d-flex align-items-start">
               <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
-                <h1 className="mb-0">1</h1>
+                <h1 className="mb-0">*</h1>
               </div>
               <div>
+                <h4 className="text-white">
+                  CHAPTER 1: Voodoo Vault Access Pass
+                </h4>
                 <p className="text-white">
-                  Voodoo Vault este un proiect unic axat pe arta in
-                  blockchain. Voodoo Vault vrea sa fie prima
-                  comunitate guvernata de artisti romani care sa
-                  produca arta la nivel INTERNATIONAL.
-                </p>
-              </div>
-            </div>
-            <div className="col d-flex align-items-start">
-              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
-                <h1 className="mb-0">2</h1>
-              </div>
-              <div>
-                <p className="text-white">
-                  Conceptul proiectului Voodoo Vault pe 2022 este
-                  reprezentat in capitole. De exemplu Voodoo Vault
-                  Acces Pass, va debloca prima voastra interactiune cu
-                  tot conceptul din spatele Universului Voodoo.
-                </p>
-              </div>
-            </div>
-            <div className="col d-flex align-items-start">
-              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
-                <h1 className="mb-0">3</h1>
-              </div>
-              <div>
-                <p className="text-white">
-                  Acest Acces Pass va da posibilitatea
-                  detinatorilor/holderilor sa primeasca: <br />
-                  • 3 NFT GRATIS READY TO IMPORT IN METAVERSE <br />•
-                  Reducere la toate drop-urile de MERCH oficial Ian{' '}
+                  a) 3 x NFT ready to import
                   <br />
-                  • Acces la Comunitatea INCHISA PRIN VERIFICARE
-                  WALLET PENTRU SEMNATURA NFT <br />• WHITELIST +
-                  REDUCERE LA COLECTIA DE 7777 FIGURINE 3D UNICE READY
-                  TO METAVERSE <br />• WHITELIST + REDUCERE LA
-                  COLECTIA DE REAL ESTATE DIN CADRUL UNIVERSUL VOODOO
-                  – CARE VOR AVEA UTILITATE REALA ATAT IN METAVERSE
-                  CAT SI IN VIATA REALA.
+                  b) Reducere la toate drop-urile de merch oficial{' '}
+                  <br /> c) Acces la comunitatea inchisa prin
+                  verificare Wallet pentru semnatura NFT <br /> d)
+                  Whitelist + reducere la colectia de 5555 figurine 3D
+                  unice ready to Metaverse <br />
+                  e) Whitelist + reducere la colectia de Real Estate
+                  din cadrul Universului Voodoo – care va avea
+                  utilitate atat in Metaverse cat si in viata reala.
                 </p>
               </div>
             </div>
             <div className="col d-flex align-items-start">
               <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
-                <h1 className="mb-0">4</h1>
+                <h1 className="mb-0">*</h1>
               </div>
               <div>
+                <h4 className="text-white">
+                  CHAPTER 2: Voodoo Vault BROKEN Access Pass
+                </h4>
                 <p className="text-white">
-                  0.1) Voodoo Vault Broken Acces Pass <br />
-                  a) tricou merch (un pre-order) <br />
-                  b) intrare eveniment VOODOO VAULT <br />
-                  c) un NFT ERC-721 pe 3 nivele de raritati <br />
-                  d) acces la grupul VIP - grup ce deschide o lume
-                  noua cu o multime de beneficii (hosting gratuit la
-                  site/server, etc)
-                </p>
-              </div>
-            </div>
-            <div className="col d-flex align-items-start">
-              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
-                <h1 className="mb-0">5</h1>
-              </div>
-              <div>
-                <p className="text-white">
-                  1. Drop de NFT pe 3 nivele de raritate, Ready to
-                  METAVERSE - pentru detinatorii de Acces Pass (nu
-                  BROKEN ACCES PASS) <br />
-                  2. Drop de NFT pe 5 nivele de raritate, Companion
-                  READY TO METAVERSE! <br />
-                  3. Drop de NFT sub forma de BENZI DESENATE – Prin
-                  acest drop deblocam VOODOO VAULT STORY-LINE, 12
-                  EDITII CONFIRMATE (SEZONUL 1). – ACESTE BENZI
-                  DESENATE VOR DUCE SPRE EXPLORAREA UNOR NOI CARACTERE
-                  CARE VOR RAMANE PENTRU ETERNITATE IN
-                  BLOCKCHAIN!!!!!!!
-                  <br /> 4. Drop de NFT pe 10 nivele de raritate,
-                  colectie de: - 7777 CARACTERE 3D UNICE CARE VOR
-                  POPULA UNIVERSUL VOODOO VAULT PENTRU ETERNITATE -
-                  10K 3D CARACTERE UNICAT READY TO METAVERSE! ACESTE
-                  CARACTERE VOR AVEA LEGATURA DIRECTA CU “DROP-UL
-                  NR.3”
-                </p>
-              </div>
-            </div>
-            <div className="col d-flex align-items-start">
-              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
-                <h1 className="mb-0">6</h1>
-              </div>
-              <div>
-                <p className="text-white">
-                  ASTFEL DEZVOLTAM UN ECOSISTEM COMPLET. FINAL CHAPTER
-                  5. TOT DRUMUL PARCURS PANA IN PUNCTUL ACESTA VA DUCE
-                  SPRE «UNIVERSUL VOODOO». DROP DE 7777 NFT TIP «REAL
-                  ESTATE», PE 3 CATEGORII DIFERITE + 12 NIVELE DE
-                  RARITATE.
-                </p>
-              </div>
-            </div>
-            <div className="col d-flex align-items-start">
-              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
-                <h1 className="mb-0">7</h1>
-              </div>
-              <div>
-                <p className="text-white">
-                  BENEFICII EXTRA VIATA REALA: <br />• Final de vara
-                  eveniment privat pentru toti detinatorii de Acces
-                  Pass intr-o locatie OUTDOOR, putem sa o numim ziua
-                  Voodoo Vault, cu concerte live + concert Ian cu
-                  piese nelansate + multe alte surprize. <br />•
-                  Apartenenta la o comunitate axata pe dezvoltare si
-                  pe adaptarea la noile necesitati ale vietii in web3.{' '}
-                  <br />• Incepeti o noua aventura in viata, aventura
-                  in zona DeFi alaturi de alte persoane persoane{' '}
-                  <br />• Posibilitate colaborari cu
-                  producatori/artisti din Romania si nu numai. <br />•
-                  Posibilitatea de a lega conexiuni cu persoane din
-                  lumea ARTEI!
-                </p>
-              </div>
-            </div>
-            <div className="col d-flex align-items-start">
-              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
-                <h1 className="mb-0">8</h1>
-              </div>
-              <div>
-                <p className="text-white">
-                  UNIVERSUL VOODOO: <br />
-                  Primul trailer al Universului Voodoo a fost lansat,
-                  se lucreaza la METAVERSE! Varianta ALPHA a
-                  Universului Voodoo - LANSARE - Q4 al acestui an.{' '}
+                  a) 1 x tricou merch (pre-order) <br />
+                  b) 1 x intrare eveniment VOODOO VAULT <br />
+                  c) 1 x NFT ERC-721 pe 3 nivele de raritati
                   <br />
-                  Ce face parte din Universul Voodoo? <br />
-                  toate NFT-urile din cadrul VOODOO VAULT se vor
-                  importa in Universul Voodoo. Astfel lucram la un
-                  proiect care sa se poata conecta la un METAVERSE
-                  deja existent astfel noi sa importam tot proiectul
-                  Voodoo Vault in unele din cele mai mari METAVERSE
-                  existente.
+                  d) acces la grupul VIP - apartenenta la o noua lume
+                  cu o multime de beneficii (ex: hosting gratuit la
+                  site/server)
                 </p>
               </div>
             </div>
             <div className="col d-flex align-items-start">
               <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
-                <h1 className="mb-0">9</h1>
+                <h1 className="mb-0">*</h1>
               </div>
               <div>
+                <h4 className="text-white">
+                  CHAPTER 3: Voodoo Companion
+                </h4>
                 <p className="text-white">
-                  METAVERSE: <br />
-                  Intentionam sa achizitionam pentru comunitate un loc
-                  in cadrul SANDBOX METAVERSE, planuim sa deschidem
-                  «VOODOO VAULT HEADQUARTERS». <br />
-                  !!!O SA FIM CAPABILI PRIN ACEASTA MISCARE SA
-                  ORGANIZAM EVENIMENTE IN METAVERSE
+                  a) NFT drop pe 3 nivele de raritate, ready to
+                  Metaverse - pentru toti detinatorii de Acces Pass
+                  (CHAPTER 1)
                 </p>
               </div>
             </div>
             <div className="col d-flex align-items-start">
               <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
-                <h1 className="mb-0">10</h1>
+                <h1 className="mb-0">*</h1>
               </div>
               <div>
+                <h4 className="text-white">CHAPTER4: VoodooLogo</h4>
                 <p className="text-white">
-                  Facem fiecare pas cu mare atentie pentru
-                  indeplinirea RoadMap-ului. <br />
-                  VOODOO NU ESTE DOAR UN ALBUM CUM NICI VOODOO VAULT
-                  NU ESTE DOAR UN PROIECT NFT! <br />
-                  Din aceasta cauza, VOODOO VAULT CHARITY se va
-                  implica in dotarea si dezvoltarea SCOLILOR DIN
-                  ZONELE RURALE DIN ROMANIA! NOI SUNTEM DIFERENTA DE
-                  CARE ERA NEVOIE! VREM SA NE FACEM SIMTITA PREZENTA,
-                  NOI CREDEM IN DEZVOLTAREA VOASTRA, A TUTUROR! <br />
-                  VOODOO VAULT PLAY2EARN GAME: <br />
-                  Lansare joc RPG 2D Play2Earn pe baza celor 10k
-                  caractere 3d unicat, joc RPG pe baza VOODOO VAULT
-                  STORY LINE. <br />• MORE INFO TO COME WE ARE FOR THE
-                  LONG-TERM, AND WE WANT EVERYONE IN THE COMMUN
+                  a) NFT drop pe 5 nivele de raritate, Companion ready
+                  to Metaverse
+                </p>
+              </div>
+            </div>
+            <div className="col d-flex align-items-start">
+              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
+                <h1 className="mb-0">*</h1>
+              </div>
+              <div>
+                <h4 className="text-white">
+                  CHAPTER 5: NFT drop sub forma de benzi desenate
+                </h4>
+                <p className="text-white">
+                  a) Unlock the Voodoo Vault Storyline - 12 editii
+                  confirmate care vor duce spre explorarea unor noi
+                  caractere ce vor ramane pentru eternitate in
+                  blockchain
+                </p>
+              </div>
+            </div>
+            <div className="col d-flex align-items-start">
+              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
+                <h1 className="mb-0">*</h1>
+              </div>
+              <div>
+                <h4 className="text-white">
+                  CHAPTER 6: NFT drop pe 10 nivele de raritate
+                </h4>
+                <p className="text-white">
+                  a) Colectie de 5555 caractere 3D unice care vor
+                  popula universul Voodoo Vault. Vor avea legatura
+                  directa cu drop-ul din CHAPTER 4.
+                </p>
+              </div>
+            </div>
+            <div className="col d-flex align-items-start">
+              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
+                <h1 className="mb-0">*</h1>
+              </div>
+              <div>
+                <h4 className="text-white">
+                  FINAL CHAPTER: Unlock the Voodoo Universe
+                </h4>
+                <p className="text-white">
+                  a) 5555 NFT tip Real Estate, pe 3 categorii diferite
+                  + 12 nivele de raritate
+                </p>
+              </div>
+            </div>
+            <div className="col d-flex align-items-start">
+              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
+                <h1 className="mb-0">*</h1>
+              </div>
+              <div>
+                <h4 className="text-white">BENEFICII EXTRA:</h4>
+                <p className="text-white">
+                  • Eveniment privat pentru toti detinatorii de Acces
+                  Pass, concerte live cu piese unreleased si multe
+                  alte surprize. <br />• Apartenenta la o comunitate
+                  axata pe dezvoltare in web3 si in zona DeFi.
+                  <br />• Posibilitatea de a colabora si lega
+                  conexiuni cu producatori si artisti la nivel
+                  national si nu numai.
+                </p>
+              </div>
+            </div>
+          </div>
+          <h2 className="pb-2 border-bottom text-white text-center">
+            Proiecte Viitoare
+          </h2>
+          <div className="row g-4 py-5 row-cols-1 row-cols-lg-2">
+            <div className="col d-flex align-items-start">
+              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
+                <h1 className="mb-0">*</h1>
+              </div>
+              <div>
+                <h4 className="text-white">
+                  VOODOO VAULT HEADQUARTERS
+                </h4>
+                <p className="text-white">
+                  Evenimente organizate in cadrul SANDBOX METAVERSE
+                </p>
+              </div>
+            </div>
+            <div className="col d-flex align-items-start">
+              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
+                <h1 className="mb-0">*</h1>
+              </div>
+              <div>
+                <h4 className="text-white">VOODOO VAULT CHARITY</h4>
+                <p className="text-white">
+                  Implicarea in dotarea si dezvoltarea scolilor din
+                  zonele rurale din Romania
+                </p>
+              </div>
+            </div>
+            <div className="col d-flex align-items-start">
+              <div className="icon-square bg-transparent text-white flex-shrink-0 me-3">
+                <h1 className="mb-0">*</h1>
+              </div>
+              <div>
+                <h4 className="text-white">
+                  VOODOO VAULT PLAY2EARN GAME
+                </h4>
+                <p className="text-white">
+                  Lansarea unui joc RPG 2D Play2Earn pe baza celor
+                  5555 caractere 3D unicat din CHAPTER 5 - Voodoo
+                  Vault Storyline
                 </p>
               </div>
             </div>
