@@ -49,10 +49,12 @@ const MintRoom = () => {
         window.ethereum
       );
 
+      const chainId = nftType === 'free' ? '0x4' : '0x1';
+
       canGetTotalSupply =
         ethersProvider &&
         ethersProvider.provider.isMetaMask &&
-        ethersProvider.provider.chainId === '0x4' &&
+        ethersProvider.provider.chainId === chainId &&
         account;
 
       if (canGetTotalSupply) {
@@ -167,7 +169,9 @@ const MintRoom = () => {
       return;
     }
 
-    if (chainId !== 4) {
+    const chainIdd = nftType === 'free' ? 4 : 1;
+
+    if (chainId !== chainIdd) {
       alert.removeAll();
       alert.error('Please use only Ethereum MainNet.');
       return;
