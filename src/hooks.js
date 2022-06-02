@@ -35,54 +35,60 @@ export function useInactiveListener(suppress = false) {
 
   useEffect(() => {
     const { ethereum } = window;
-    if (ethereum && ethereum.on && !active && !error && !suppress) {
-      const handleConnect = () => {
-        console.log("Handling 'connect' event");
-        activate(metaMask);
-      };
-      const handleChainChanged = (chainId) => {
-        console.log(
-          "Handling 'chainChanged' event with payload",
-          chainId
-        );
-        activate(metaMask);
-      };
-      const handleAccountsChanged = (accounts) => {
-        console.log(
-          "Handling 'accountsChanged' event with payload",
-          accounts
-        );
-        if (accounts.length > 0) {
+
+    if (ethereum && ethereum !== undefined) {
+      if (ethereum && ethereum.on && !active && !error && !suppress) {
+        const handleConnect = () => {
+          console.log("Handling 'connect' event");
           activate(metaMask);
-        }
-      };
-      const handleNetworkChanged = (networkId) => {
-        console.log(
-          "Handling 'networkChanged' event with payload",
-          networkId
-        );
-        activate(metaMask);
-      };
-
-      ethereum.on('connect', handleConnect);
-      ethereum.on('chainChanged', handleChainChanged);
-      ethereum.on('accountsChanged', handleAccountsChanged);
-      ethereum.on('networkChanged', handleNetworkChanged);
-
-      return () => {
-        if (ethereum.removeListener) {
-          ethereum.removeListener('connect', handleConnect);
-          ethereum.removeListener('chainChanged', handleChainChanged);
-          ethereum.removeListener(
-            'accountsChanged',
-            handleAccountsChanged
+        };
+        const handleChainChanged = (chainId) => {
+          console.log(
+            "Handling 'chainChanged' event with payload",
+            chainId
           );
-          ethereum.removeListener(
-            'networkChanged',
-            handleNetworkChanged
+          activate(metaMask);
+        };
+        const handleAccountsChanged = (accounts) => {
+          console.log(
+            "Handling 'accountsChanged' event with payload",
+            accounts
           );
-        }
-      };
+          if (accounts.length > 0) {
+            activate(metaMask);
+          }
+        };
+        const handleNetworkChanged = (networkId) => {
+          console.log(
+            "Handling 'networkChanged' event with payload",
+            networkId
+          );
+          activate(metaMask);
+        };
+
+        ethereum.on('connect', handleConnect);
+        ethereum.on('chainChanged', handleChainChanged);
+        ethereum.on('accountsChanged', handleAccountsChanged);
+        ethereum.on('networkChanged', handleNetworkChanged);
+
+        return () => {
+          if (ethereum.removeListener) {
+            ethereum.removeListener('connect', handleConnect);
+            ethereum.removeListener(
+              'chainChanged',
+              handleChainChanged
+            );
+            ethereum.removeListener(
+              'accountsChanged',
+              handleAccountsChanged
+            );
+            ethereum.removeListener(
+              'networkChanged',
+              handleNetworkChanged
+            );
+          }
+        };
+      }
     }
   }, [active, error, suppress, activate]);
 }

@@ -10,10 +10,14 @@ import {
   faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
 
-const Footer = () => {
+const Footer = (isHome) => {
   return (
     <>
-      <footer className="footer mt-md-auto py-md-3 text-white bg-transparent">
+      <footer
+        className={`footer ${
+          isHome ? 'mt-auto' : 'mt-md-auto'
+        } py-md-3 text-white bg-transparent`}
+      >
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-4 mb-small">

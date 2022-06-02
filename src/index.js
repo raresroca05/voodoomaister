@@ -31,7 +31,6 @@ window.onload = () => {
 const getLibrary = (provider) => {
   const library = new Web3Provider(provider);
   library.pollingInterval = 12000;
-
   return library;
 };
 
@@ -58,7 +57,7 @@ const root = ReactDOMClient.createRoot(container);
 root.render(
   <React.StrictMode>
     <Web3ReactProvider getLibrary={getLibrary}>
-    <AlertProvider template={AlertTemplate} {...alertOptions}>
+      <AlertProvider template={AlertTemplate} {...alertOptions}>
         <App />
       </AlertProvider>
     </Web3ReactProvider>

@@ -1,6 +1,11 @@
 import { ethers } from 'ethers';
+import contractJsonFree from '../contracts/VoodooVaultAniversaryEdition.json';
 import contractJsonNormal from '../contracts/voodooContractNormal.json';
 import contractJsonBroken from '../contracts/VoodooVaultBrokenPass.json';
+
+export const contractAddressFree =
+  '0x04C2c9F538a15ED811BbEC8E5bCb0841e3480A5e';
+export const contractAbiFree = contractJsonFree.abi;
 
 export const contractAddressNormal =
   '0xb24EAc3AAD94B42Dd5ddffC927054f29b7451424';
@@ -13,10 +18,23 @@ export const contractAbiBroken = contractJsonBroken.abi;
 export const getContract = (library, type) => {
   const librarySigner = library.getSigner();
 
-  const contractAddress =
-    type === 'normal' ? contractAddressNormal : contractAddressBroken;
-  const contractAbi =
-    type === 'normal' ? contractAbiNormal : contractAbiBroken;
+  let contractAddress = undefined;
+  if (type === 'normal') {
+    contractAddress = contractAddressNormal;
+  } else if (type === 'broken') {
+    contractAddress = contractAddressBroken;
+  } else {
+    contractAddress = contractAddressFree;
+  }
+
+  let contractAbi = undefined;
+  if (type === 'normal') {
+    contractAbi = contractAbiNormal;
+  } else if (type === 'broken') {
+    contractAbi = contractAbiBroken;
+  } else {
+    contractAbi = contractAbiFree;
+  }
 
   let ethersContract = new ethers.Contract(
     contractAddress,

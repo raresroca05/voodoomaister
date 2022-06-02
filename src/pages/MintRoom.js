@@ -16,6 +16,8 @@ import { metaMask } from '../utils/web3Functions';
 import { getContract } from '../utils/contractFunctions';
 import { useEagerConnect, useInactiveListener } from '../hooks';
 import {
+  MINTING_PRICE_FREE,
+  TOTAL_NFTS_FREE,
   MINTING_PRICE_NORMAL,
   TOTAL_NFTS_NORMAL,
   MINTING_PRICE_BROKEN,
@@ -32,7 +34,7 @@ const MintRoom = () => {
   const web3reactContext = useWeb3React();
   const { connector, account } = web3reactContext;
 
-  const [nftType, setNftType] = useState('normal');
+  const [nftType, setNftType] = useState('free');
   const [nftsToMint, setNftsToMint] = useState(1);
   const [nftsRemaining, setNftsRemaining] = useState(undefined);
   const [isMinting, setIsMinting] = useState(false);
@@ -41,34 +43,46 @@ const MintRoom = () => {
   );
 
   const getInitTotalSupply = async () => {
-    ethersProvider = new ethers.providers.Web3Provider(
-      window.ethereum,
-      'any'
-    );
+    if (window.ethereum) {
+      ethersProvider = new ethers.providers.Web3Provider(
+        window.ethereum
+      );
 
-    canGetTotalSupply =
-      ethersProvider &&
-      ethersProvider.provider.isMetaMask &&
-      ethersProvider.provider.chainId === '0x1' &&
-      account;
+      canGetTotalSupply =
+        ethersProvider &&
+        ethersProvider.provider.isMetaMask &&
+        ethersProvider.provider.chainId === '0x4' &&
+        account;
 
-    if (canGetTotalSupply) {
-      const nftContract = getContract(ethersProvider, nftType);
+      if (canGetTotalSupply) {
+        const nftContract = getContract(ethersProvider, nftType);
 
-      await nftContract.totalSupply().then((result) => {
-        totalSupply = parseInt(result);
-        const actualSupply =
-          nftType === 'normal'
-            ? TOTAL_NFTS_NORMAL
-            : TOTAL_NFTS_BROKEN;
-        setNftsRemaining(actualSupply - totalSupply);
-      });
+        await nftContract.totalSupply().then((result) => {
+          totalSupply = parseInt(result);
+
+          let actualSupply = 0;
+          if (nftType === 'normal') {
+            actualSupply = TOTAL_NFTS_NORMAL;
+          } else if (nftType === 'broken') {
+            actualSupply = TOTAL_NFTS_BROKEN;
+          } else {
+            actualSupply = TOTAL_NFTS_FREE;
+          }
+
+          setNftsRemaining(actualSupply - totalSupply);
+        });
+      }
     }
   };
 
   if (typeof window.ethereum !== 'undefined') {
     getInitTotalSupply();
   }
+
+  const handleNFreeType = () => {
+    setNftType('free');
+    getInitTotalSupply();
+  };
 
   const handleNormalType = () => {
     setNftType('normal');
@@ -98,8 +112,11 @@ const MintRoom = () => {
       alert.removeAll();
       alert.error('You cannot mint more than 10 NFTs.');
       return;
+    } else {
+      alert.removeAll();
+      alert.error('You cannot mint more than 1 FREE NFT.');
+      return;
     }
-    setNftsToMint(nftsToMint + 1);
   };
 
   const handleWalletDisconect = () => {
@@ -123,21 +140,33 @@ const MintRoom = () => {
   };
 
   const mintNftHandler = async () => {
-    const { account, library, chainId } = web3reactContext;
-    const actualSupply =
-      nftType === 'normal' ? TOTAL_NFTS_NORMAL : TOTAL_NFTS_BROKEN;
-    const actualPrice =
-      nftType === 'normal'
-        ? MINTING_PRICE_NORMAL
-        : MINTING_PRICE_BROKEN;
+    const { account, chainId } = web3reactContext;
 
-    if (!account && !library) {
+    let actualSupply = 0;
+    if (nftType === 'normal') {
+      actualSupply = TOTAL_NFTS_NORMAL;
+    } else if (nftType === 'broken') {
+      actualSupply = TOTAL_NFTS_BROKEN;
+    } else {
+      actualSupply = TOTAL_NFTS_FREE;
+    }
+
+    let actualPrice = 0;
+    if (nftType === 'normal') {
+      actualPrice = MINTING_PRICE_NORMAL;
+    } else if (nftType === 'broken') {
+      actualPrice = MINTING_PRICE_BROKEN;
+    } else {
+      actualPrice = MINTING_PRICE_FREE;
+    }
+
+    if (!account) {
       alert.removeAll();
       alert.error('Connect MetaMask Wallet first.');
       return;
     }
 
-    if (chainId !== 1) {
+    if (chainId !== 4) {
       alert.removeAll();
       alert.error('Please use only Ethereum MainNet.');
       return;
@@ -154,13 +183,18 @@ const MintRoom = () => {
 
     try {
       const nftsToMintValue = nftsToMint * actualPrice;
-      const nftContract = getContract(library, nftType);
+      const nftContract = getContract(ethersProvider, nftType);
 
-      let nftTxn = await nftContract.buy(nftsToMint, {
-        value: ethers.utils.parseEther(
-          `${nftsToMintValue.toFixed(4)}`
-        ),
-      });
+      let nftTxn;
+      if (nftType !== 'free') {
+        nftTxn = await nftContract.buy(nftsToMint, {
+          value: ethers.utils.parseEther(
+            `${nftsToMintValue.toFixed(4)}`
+          ),
+        });
+      } else {
+        nftTxn = await nftContract.buy();
+      }
 
       setIsMinting(true);
       await nftTxn.wait();
@@ -168,7 +202,7 @@ const MintRoom = () => {
 
       alert.removeAll();
       alert.success(
-        `Mined, see transaction: https://etherscan.io/tx/${nftTxn.hash}.`
+        `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}.`
       );
     } catch (err) {
       let errorMessage;
@@ -267,6 +301,15 @@ const MintRoom = () => {
                     role="group"
                     aria-label="Select mint"
                   >
+                    <button
+                      type="button"
+                      className={`btn btn-${
+                        nftType === 'free' ? 'light' : 'outline-light'
+                      }`}
+                      onClick={handleNFreeType}
+                    >
+                      FREE PASS
+                    </button>
                     <button
                       type="button"
                       className={`btn btn-${

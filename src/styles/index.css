@@ -50,8 +50,14 @@ main {
   }
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 300px) {
   .h-sm-75 {
+    height: 75% !important;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .h-lg-75 {
     height: 75% !important;
   }
 }
