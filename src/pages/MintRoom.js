@@ -115,11 +115,13 @@ const MintRoom = () => {
       alert.removeAll();
       alert.error('You cannot mint more than 10 NFTs.');
       return;
-    } else {
+    } else if (nftType === 'free' && nftsToMint === 1) {
       alert.removeAll();
       alert.error('You cannot mint more than 1 FREE NFT.');
       return;
     }
+
+    setNftsToMint(nftsToMint + 1);
   };
 
   const handleWalletDisconect = () => {
