@@ -202,7 +202,7 @@ const MintRoom = () => {
 
       alert.removeAll();
       alert.success(
-        `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}.`
+        `Mined: https://rinkeby.etherscan.io/tx/${nftTxn.hash}.`
       );
     } catch (err) {
       let errorMessage;
