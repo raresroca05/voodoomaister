@@ -10,6 +10,7 @@ import { useAlert } from '@blaumaus/react-alert';
 import logo from '../assets/images/logo.png';
 import normalPass from '../assets/images/normal.png';
 import brokenPass from '../assets/images/broken.png';
+import freePass from '../assets/images/free.png';
 
 import Footer from '../sections/Footer';
 import { metaMask } from '../utils/web3Functions';
@@ -396,6 +397,13 @@ const MintRoom = () => {
                     src={brokenPass}
                     className="rounded mx-auto d-block coin-img"
                     alt="Broken"
+                  />
+                )}
+                {nftType === 'free' && (
+                  <img
+                    src={freePass}
+                    className="rounded mx-auto d-block coin-img"
+                    alt="Free"
                   />
                 )}
               </div>
