@@ -84,6 +84,7 @@ const MintRoom = () => {
 
   const handleNFreeType = () => {
     setNftType('free');
+    setNftsToMint(1);
     getInitTotalSupply();
   };
 
